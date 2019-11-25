@@ -35,6 +35,7 @@ public class ReviewsApplicationTests {
 
 	@Test
 	public void reviewTest(){
+		productTest();
 		Reviews review = new Reviews();
 		review.setReview("very good");
 		Product product = new Product();
@@ -70,6 +71,8 @@ public class ReviewsApplicationTests {
 	}*/
 	@Test
 	public void testSaveAndGetComments(){
+
+		reviewTest();
 		Comment comment = new Comment("Very good");
 		comment.setReviewId(1);
 		comment = commentRepository.save(comment);

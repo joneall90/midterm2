@@ -7,9 +7,9 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer commentId;
+    private int commentId;
 
-    private Integer reviewId;
+    private int reviewId;
 
     private String comment;
 
@@ -17,19 +17,19 @@ public class Comment {
         this.setComment(comment);
     }
 
-    public Integer getCommentId() {
+    public int getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(Integer commentId) {
+    public void setCommentId(int commentId) {
         this.commentId = commentId;
     }
 
-    public Integer getReviewId() {
+    public int getReviewId() {
         return reviewId;
     }
 
-    public void setReviewId(Integer reviewId) {
+    public void setReviewId(int reviewId) {
         this.reviewId = reviewId;
     }
 
@@ -41,5 +41,5 @@ public class Comment {
         this.comment = comment;
     }
 
-    public void Comment(){}
+    public Comment(){}
 }

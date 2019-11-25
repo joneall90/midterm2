@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Reviews {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer reviewId;
+    private int reviewId;
 
     @ManyToOne
     @JoinColumn(name = "productId", nullable = false)
@@ -34,11 +34,11 @@ public class Reviews {
         this.product = product;
     }
 
-    public Integer getReviewId() {
+    public int getReviewId() {
         return reviewId;
     }
 
-    public void setReviewId(Integer reviewId) {
+    public void setReviewId(int reviewId) {
         this.reviewId = reviewId;
     }
 

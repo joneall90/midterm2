@@ -1,0 +1,10 @@
+com\udacity\course3\reviews\controller\ProductsController.class
+com\udacity\course3\reviews\ReviewsApplication.class
+com\udacity\course3\reviews\repository\ReviewsRepository.class
+com\udacity\course3\reviews\repository\CommentRepository.class
+com\udacity\course3\reviews\controller\CommentsController.class
+com\udacity\course3\reviews\entities\Reviews.class
+com\udacity\course3\reviews\controller\ReviewsController.class
+com\udacity\course3\reviews\repository\ProductRepository.class
+com\udacity\course3\reviews\entities\Comment.class
+com\udacity\course3\reviews\entities\Product.class
