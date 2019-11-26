@@ -14,7 +14,7 @@ public class Comment {
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "reviewId", nullable = false)
     @JsonIgnore
-    private int reviewId;
+    private Reviews reviewId;
 
     private String comment;
 
@@ -30,11 +30,11 @@ public class Comment {
         this.commentId = commentId;
     }
 
-    public int getReviewId() {
+    public Reviews getReviewId() {
         return reviewId;
     }
 
-    public void setReviewId(int reviewId) {
+    public void setReviewId(Reviews reviewId) {
         this.reviewId = reviewId;
     }
 
