@@ -14,7 +14,7 @@ public class Product {
     @Column
     private String productName;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", cascade=CascadeType.ALL)
     private List<Reviews> reviews = new ArrayList<>();
 
     public Product() {

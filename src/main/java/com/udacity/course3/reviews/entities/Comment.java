@@ -1,5 +1,7 @@
 package com.udacity.course3.reviews.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,9 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int commentId;
 
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "reviewId", nullable = false)
+    @JsonIgnore
     private int reviewId;
 
     private String comment;

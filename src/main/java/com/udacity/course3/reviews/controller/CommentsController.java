@@ -58,16 +58,17 @@ public class CommentsController {
      * 4. If found, return list of comments.
      *
      * @param reviewId The id of the review.
+     * @return
      */
     @RequestMapping(value = "/reviews/{reviewId}", method = RequestMethod.GET)
-    public List<?> listCommentsForReview(@PathVariable("reviewId") Integer reviewId) {
+    public ResponseEntity<List<Comment>> listCommentsForReview(@PathVariable("reviewId") Integer reviewId) {
         Optional<Reviews> review = reviewsRepository.findById(reviewId);
         if(review.isPresent()){
             List<Comment> comments = commentRepository.findAllByReviewId(reviewId);
-            return (List<?>) ResponseEntity.ok(comments);
+            return ResponseEntity.ok(comments);
         }
         else {
-            return (List<?>) ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();
         }
     }
 }

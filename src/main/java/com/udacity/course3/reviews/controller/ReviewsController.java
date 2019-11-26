@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,8 +63,10 @@ public class ReviewsController {
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public List<Reviews> listReviewsForProduct(@PathVariable("productId") Integer productId) {
 
-        List<Reviews> reviews = reviewsRepository.findAllByProduct(new Product());
-
-        return reviews;
+        Optional<Product> product = productRepository.findById(productId);
+        if(product.isPresent()){
+            return reviewsRepository.findAllByProduct(product.get());
+        }
+        return Collections.emptyList();
     }
 }
